@@ -1,3 +1,9 @@
-<p>
-  book-form works!
-</p>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #carForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="book.name" required>
+    </div>
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+</div>
