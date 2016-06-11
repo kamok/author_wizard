@@ -8,7 +8,8 @@ import {
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
-import { Http, HTTP_PROVIDERS } from '@angular/http';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { ROUTER_FAKE_PROVIDERS } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { BookService } from '../book.service'
 import { BookListComponent } from './book-list.component';
@@ -18,6 +19,7 @@ describe('Component: BookList', () => {
 
   beforeEachProviders(() => [
     HTTP_PROVIDERS,
+    ROUTER_FAKE_PROVIDERS,
     BookService,
     BookListComponent
   ]);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from '../book.service'
 
 @Component({
@@ -11,7 +12,7 @@ import { BookService } from '../book.service'
 export class BookListComponent implements OnInit {
   books: any;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private router: Router) {}
 
   ngOnInit() {
     this.bookService
@@ -19,4 +20,7 @@ export class BookListComponent implements OnInit {
         .subscribe(response => this.books = response.json());
   }
 
+  goToNew() {
+    this.router.navigate(['/new-book'])
+  }
 }
