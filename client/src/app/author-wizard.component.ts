@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BookListComponent } from './+book-list';
 import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { NewBookComponent } from './+new-book';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,8 @@ import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
   providers: [ROUTER_PROVIDERS]
 })
 @Routes([
-  {path: '/book-list', component: BookListComponent}
+  {path: '/book-list', component: BookListComponent},
+  {path: '/new-book', component: NewBookComponent}
 ])
 export class AuthorWizardAppComponent {
   title = 'author-wizard works!';
