@@ -8,13 +8,20 @@ import {
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
+import { Http, HTTP_PROVIDERS } from '@angular/http';
 import { By } from '@angular/platform-browser';
+import { BookService } from '../book.service'
 import { BookListComponent } from './book-list.component';
 
 describe('Component: BookList', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [BookListComponent]);
+  beforeEachProviders(() => [
+    HTTP_PROVIDERS,
+    BookService,
+    BookListComponent
+  ]);
+
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
