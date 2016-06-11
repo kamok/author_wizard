@@ -23,4 +23,8 @@ export class BookListComponent implements OnInit {
   goToNew() {
     this.router.navigate(['/new-book'])
   }
+
+  edit(id) {
+    this.router.navigate(['/edit-book/' + id])
+  }
 }
