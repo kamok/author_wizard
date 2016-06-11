@@ -14,10 +14,14 @@ export class BookListComponent implements OnInit {
 
   constructor(private bookService: BookService, private router: Router) {}
 
-  ngOnInit() {
+  load() {
     this.bookService
-        .getList()
-        .subscribe(response => this.books = response.json());
+      .getList()
+      .subscribe(response => this.books = response.json());
+  }
+
+  ngOnInit() {
+    this.load();
   }
 
   goToNew() {
@@ -26,5 +30,9 @@ export class BookListComponent implements OnInit {
 
   edit(id) {
     this.router.navigate(['/edit-book/' + id])
+  }
+
+  delete(id) {
+    this.bookService.delete(id).subscribe(response => this.load());
   }
 }

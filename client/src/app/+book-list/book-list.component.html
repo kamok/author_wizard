@@ -4,5 +4,6 @@
   <tr *ngFor="let book of books">
     <td>{{ book.name }}</td>
     <td><button (click)="edit(book.id)">Edit</button></td>
+    <td><button (click)="delete(book.id)">Delete</button></td>
   </tr>
 </table>
